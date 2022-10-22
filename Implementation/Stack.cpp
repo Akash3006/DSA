@@ -3,14 +3,15 @@
 using namespace std;
 class Stack{
 
-    public:
-    int size;
+    public:    
     int top;
-    int* arr;
+    int size;
+    int *arr;
     Stack(int size)
     {
         top =-1;
-        arr = new int[this->size = size];
+        this->size = size;
+        arr = new int[size];
     } 
     bool isEmpty(){
         return top==-1;
@@ -22,22 +23,21 @@ class Stack{
     void push(int element){
         
         if(isFull())
-            cout<<"Stack Full"<<endl;return;
+            {cout<<"Stack Full"<<endl;return;}
         
         arr[++top] = element;
         cout<<"Pushed: "<<element<<endl;
     }
-    void pop(){
-        
+    void pop(){        
         if(isEmpty())
-            cout<<"Stack empty"<<endl;return;
+            {cout<<"Stack empty"<<endl;return;}
         
-        cout<<"Poped: "<<arr[top];
+        cout<<"Poped: "<<endl<<arr[top];
         --top;
     }
     void peek(){
         if(isEmpty())
-            cout<<"Stack empty"<<endl;return;
+            {cout<<"Stack empty"<<endl;return;}
         cout<<"Element at top: "<<arr[top]<<endl;
     }
 };// namespace std;
